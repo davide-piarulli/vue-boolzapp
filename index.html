@@ -61,7 +61,8 @@
 
         <div
           class="chat d-flex"
-          v-for="contact in contacts"
+          v-for="(contact, indice) in contacts"
+          @click="activeId = indice"
           >
           <div class="profile-pic">
             <img
@@ -71,7 +72,7 @@
           <div class="chat-message hidden">
             <span><strong>{{contact.name}}</strong></span>
             <br>
-            <span>Lorem ipsum dolor sit amet.</span>
+            <span>{{contact.messages[contact.messages.length - 1].message}}</span>
             <span class="last-message-time">16:05</span>
           </div>
         </div>
@@ -111,9 +112,15 @@
 
       <div class="chat-box d-flex">
         
-        <div class="message sent">
-          <div class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
+        <div
+          class="message"
+          v-for="message in contacts[activeId].messages"
+          :class="message.status ==='sent' ? 'sent' : 'received'"
+          >
+          <div
+            class="content"
+            >
+            {{message.message}}
           </div>
           <div class="box">
             <i class="fa-solid fa-chevron-down"></i> 
@@ -122,10 +129,10 @@
               <span>Cancella Messaggio</span>
             </div>
           </div>
-          <span class="time-message">16:13</span>
+          <span class="time-message">{{message.date}}</span>
         </div>
 
-        <div class="message sent">
+        <!-- <div class="message sent">
           <div class="content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
           </div>
@@ -176,7 +183,7 @@
             </div>
           </div>
           <span class="time-message">16:17</span>
-        </div>
+        </div> -->
 
       </div>
 
