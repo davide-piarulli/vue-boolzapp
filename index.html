@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boolzapp</title>
   <!-- FONT AWESOME-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- FONT FAMILY -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
 
-<!-- VUE -->
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <!-- STYLE -->
   <link rel="stylesheet" href="assets/style/style.css">
 </head>
+
 <body id="app" class="d-flex justify-center align-center dark">
   <div class="container d-flex">
 
@@ -55,19 +61,16 @@
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
       </div>
-      
-      
+
+
       <div class="chat-list">
 
         <div
           class="chat d-flex"
           v-for="(contact, indice) in contacts"
-          @click="activeId = indice"
-          >
+          @click="activeId = indice">
           <div class="profile-pic">
-            <img
-              :src="`assets${contact.avatar}`"
-              :alt="contact.name">
+            <img :src="`assets${contact.avatar}`" :alt="contact.name">
           </div>
           <div class="chat-message hidden">
             <span><strong>{{contact.name}}</strong></span>
@@ -77,9 +80,9 @@
           </div>
         </div>
 
-        
-        
-       
+
+
+
       </div>
 
     </div>
@@ -90,17 +93,19 @@
 
       <div class="topbar d-flex justify-between">
 
-        <div class="chat d-flex ">
+        <div class="chat d-flex "
+        v-for="(contact, indice) in contacts"
+        >
           <div class="profile-pic">
-            <img src="assets/img/avatar_1.jpg" alt="">
+            <img :src="`assets${contact.avatar}`" alt="">
           </div>
 
           <div class="chat-name">
-            <span><strong>Michele</strong></span><br>
+            <span><strong>{{contacts[activeId].name}}</strong></span><br>
             <span>Ultimo accesso oggi alle 16:26</span>
           </div>
         </div>
-        
+
 
         <div class="right menu">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -111,19 +116,16 @@
 
 
       <div class="chat-box d-flex">
-        
-        <div
-          class="message"
+
+        <!-- messaggio che si cicla -->
+        <div class="message" 
           v-for="message in contacts[activeId].messages"
-          :class="message.status ==='sent' ? 'sent' : 'received'"
-          >
-          <div
-            class="content"
-            >
+          :class="message.status ==='sent' ? 'sent' : 'received'">
+          <div class="content">
             {{message.message}}
           </div>
           <div class="box">
-            <i class="fa-solid fa-chevron-down"></i> 
+            <i class="fa-solid fa-chevron-down"></i>
             <div class="message-info">
               <span>Info Messaggio</span><br>
               <span>Cancella Messaggio</span>
@@ -132,58 +134,6 @@
           <span class="time-message">{{message.date}}</span>
         </div>
 
-        <!-- <div class="message sent">
-          <div class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-chevron-down"></i> 
-            <div class="message-info">
-              <span>Info Messaggio</span><br>
-              <span>Cancella Messaggio</span>
-            </div>
-          </div>
-          <span class="time-message">16:14</span>
-        </div>
-        <div class="message received">
-          <div class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-chevron-down"></i> 
-            <div class="message-info">
-              <span>Info Messaggio</span><br>
-              <span>Cancella Messaggio</span>
-            </div>
-          </div>
-          <span class="time-message">16:15</span>
-        </div>
-        <div class="message sent">
-          <div class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-chevron-down"></i> 
-            <div class="message-info">
-              <span>Info Messaggio</span><br>
-              <span>Cancella Messaggio</span>
-            </div>
-          </div>
-          <span class="time-message">16:16</span>
-        </div>
-        <div class="message received">
-          <div class="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-chevron-down"></i> 
-            <div class="message-info">
-              <span>Info Messaggio</span><br>
-              <span>Cancella Messaggio</span>
-            </div>
-          </div>
-          <span class="time-message">16:17</span>
-        </div> -->
 
       </div>
 
@@ -194,7 +144,12 @@
 
         <div class="text-input">
           <div class="new-message">
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input
+              type="text"
+              placeholder="Scrivi un messaggio"
+              v-model.trim="newMsg"
+              @keyup.enter="newMessage(), answer()"
+              >
           </div>
         </div>
 
@@ -208,4 +163,5 @@
   </div>
   <script type="module" src="script/script.js"></script>
 </body>
+
 </html>
