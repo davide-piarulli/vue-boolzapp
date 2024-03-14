@@ -12,6 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
+<!-- VUE -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
   <!-- STYLE -->
   <link rel="stylesheet" href="assets/style/style.css">
 </head>
@@ -55,101 +58,26 @@
       
       
       <div class="chat-list">
-        <div class="chat d-flex">
+
+        <div
+          class="chat d-flex"
+          v-for="contact in contacts"
+          >
           <div class="profile-pic">
-            <img src="assets/img/avatar_2.jpg" alt="">
+            <img
+              :src="`assets${contact.avatar}`"
+              :alt="contact.name">
           </div>
           <div class="chat-message hidden">
-            <span><strong>Fabio</strong></span>
+            <span><strong>{{contact.name}}</strong></span>
             <br>
             <span>Lorem ipsum dolor sit amet.</span>
             <span class="last-message-time">16:05</span>
           </div>
         </div>
 
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_3.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Samuele</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">16:03</span>
-          </div>
-        </div>
-
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_4.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Alessandro B.</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">15:55</span>
-          </div>
-        </div>
-
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_5.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Alessandro L.</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">15:50</span>
-          </div>
-        </div>
-
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_6.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Claudia</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">15:45</span>
-          </div>
-        </div>
-
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_7.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Federico</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">15:40</span>
-          </div>
-        </div>
-
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_8.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Davide</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">15:35</span>
-          </div>
-        </div>
-
-        <div class="chat d-flex">
-          <div class="profile-pic">
-            <img src="assets/img/avatar_1.jpg" alt="">
-          </div>
-          <div class="chat-message hidden">
-            <span><strong>Fabio</strong></span>
-            <br>
-            <span>Lorem ipsum dolor sit amet.</span>
-            <span class="last-message-time">15:30</span>
-          </div>
-        </div>
+        
+        
        
       </div>
 
@@ -271,6 +199,6 @@
     <!-- /RIGHT -->
 
   </div>
-  <script type="module" src="assets/script/script.js"></script>
+  <script type="module" src="script/script.js"></script>
 </body>
 </html>
