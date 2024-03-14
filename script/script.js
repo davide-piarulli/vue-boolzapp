@@ -12,7 +12,8 @@ createApp({
         date: '',
         message: '',
         status: ''
-      }
+      },
+      nametoSearch: ''
     }
   },
   methods: {
@@ -44,8 +45,10 @@ createApp({
      
     }
   },
-  mounted() {
-    console.log(contacts);
 
+  computed:{
+    nomiCercati(){
+      return contacts.contact.filter(message => message.name.toLowerCase().includes(this.nametoSearch.toLowerCase()))
+    }
   }
 }).mount('#app');

@@ -58,7 +58,11 @@
       <div class="chat-search hidden">
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input
+            type="text"
+            placeholder="Cerca o inizia una nuova chat"
+            v-model="nametoSearch"
+            >
         </div>
       </div>
 
@@ -93,11 +97,11 @@
 
       <div class="topbar d-flex justify-between">
 
-        <div class="chat d-flex "
-        v-for="(contact, indice) in contacts"
-        >
+        <div class="chat d-flex ">
           <div class="profile-pic">
-            <img :src="`assets${contact.avatar}`" alt="">
+            <img
+              :src="`assets${contacts[activeId].avatar}`"
+              :alt="contacts[activeId].name">
           </div>
 
           <div class="chat-name">
