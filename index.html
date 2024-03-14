@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boolzapp</title>
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- FONT FAMILY -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- STYLE -->
+  <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body id="app" class="d-flex justify-center align-center dark">
+  <div class="container d-flex">
+
+    <!-- LEFT -->
+    <div class="main-left">
+
+      <div class="topbar d-flex justify-between">
+
+        <div class="profile-pic">
+          <img src="assets/img/avatar_io.jpg" alt="">
+        </div>
+
+        <div class="left menu hidden">
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-solid fa-message"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+
+      <!-- notifiche -->
+      <div class="notifications card d-flex hidden">
+        <div class="circle-left">
+          <i class="fa-solid fa-bell-slash"></i>
+        </div>
+        <div class="notifications-text">
+          <span><strong>Ricevi notifiche di nuovi messaggi</strong></span><br>
+          <a href="#"><strong>Attiva notifiche desktop</strong></a>
+        </div>
+      </div>
+
+      <!-- search -->
+      <div class="chat-search hidden">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Cerca o inizia una nuova chat">
+        </div>
+      </div>
+      
+      
+      <div class="chat-list">
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_2.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Fabio</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">16:05</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_3.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Samuele</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">16:03</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_4.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Alessandro B.</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">15:55</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_5.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Alessandro L.</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">15:50</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_6.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Claudia</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">15:45</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_7.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Federico</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">15:40</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_8.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Davide</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">15:35</span>
+          </div>
+        </div>
+
+        <div class="chat d-flex">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_1.jpg" alt="">
+          </div>
+          <div class="chat-message hidden">
+            <span><strong>Fabio</strong></span>
+            <br>
+            <span>Lorem ipsum dolor sit amet.</span>
+            <span class="last-message-time">15:30</span>
+          </div>
+        </div>
+       
+      </div>
+
+    </div>
+    <!-- /LEFT -->
+
+    <!-- RIGHT -->
+    <div class="main-right">
+
+      <div class="topbar d-flex justify-between">
+
+        <div class="chat d-flex ">
+          <div class="profile-pic">
+            <img src="assets/img/avatar_1.jpg" alt="">
+          </div>
+
+          <div class="chat-name">
+            <span><strong>Michele</strong></span><br>
+            <span>Ultimo accesso oggi alle 16:26</span>
+          </div>
+        </div>
+        
+
+        <div class="right menu">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-paperclip"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+      </div>
+
+
+      <div class="chat-box d-flex">
+        
+        <div class="message sent">
+          <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-chevron-down"></i> 
+            <div class="message-info">
+              <span>Info Messaggio</span><br>
+              <span>Cancella Messaggio</span>
+            </div>
+          </div>
+          <span class="time-message">16:13</span>
+        </div>
+
+        <div class="message sent">
+          <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-chevron-down"></i> 
+            <div class="message-info">
+              <span>Info Messaggio</span><br>
+              <span>Cancella Messaggio</span>
+            </div>
+          </div>
+          <span class="time-message">16:14</span>
+        </div>
+        <div class="message received">
+          <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-chevron-down"></i> 
+            <div class="message-info">
+              <span>Info Messaggio</span><br>
+              <span>Cancella Messaggio</span>
+            </div>
+          </div>
+          <span class="time-message">16:15</span>
+        </div>
+        <div class="message sent">
+          <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-chevron-down"></i> 
+            <div class="message-info">
+              <span>Info Messaggio</span><br>
+              <span>Cancella Messaggio</span>
+            </div>
+          </div>
+          <span class="time-message">16:16</span>
+        </div>
+        <div class="message received">
+          <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci modi neque quod dolores eveniet quisquam error dignissimos veritatis esse quam.
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-chevron-down"></i> 
+            <div class="message-info">
+              <span>Info Messaggio</span><br>
+              <span>Cancella Messaggio</span>
+            </div>
+          </div>
+          <span class="time-message">16:17</span>
+        </div>
+
+      </div>
+
+      <div class="bottom-bar d-flex">
+        <div class="icon emoji hidden-mobile">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+
+        <div class="text-input">
+          <div class="new-message">
+            <input type="text" placeholder="Scrivi un messaggio">
+          </div>
+        </div>
+
+        <div class="icon audio-message hidden-mobile">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
+    </div>
+    <!-- /RIGHT -->
+
+  </div>
+  <script type="module" src="assets/script/script.js"></script>
+</body>
+</html>
