@@ -23,15 +23,20 @@ createApp({
   methods: {
 
     printData(){
-  
+      
+      
     this.dataOra = DateTime.now()
         .setLocale('it')
-        .toFormat('dd/MM/yyyy hh:mm:ss')
-      },
+        .toFormat('dd/MM/yyyy HH:mm:ss')
+      return this.dataOra;
+    },
 
+    
     newMessage() {
+      this.printData();
+      console.log(this.dataOra);
       this.newText = {
-        date: this.printData(),
+        date: this.dataOra,
         message: this.newMsg,
         status: 'sent'
       }
