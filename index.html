@@ -71,8 +71,10 @@
 
         <div
           class="chat d-flex"
-          v-for="(contact, indice) in contacts"
-          @click="activeId = indice">
+          v-for="(contact, indice) in searchContacts"
+          @click="activeId = indice"
+          v-show="contact.visible === true"
+          >
           <div class="profile-pic">
             <img :src="`assets${contact.avatar}`" :alt="contact.name">
           </div>
@@ -124,7 +126,7 @@
         <!-- messaggio che si cicla -->
         <div class="message" 
           v-for="message in contacts[activeId].messages"
-          :class="message.status ==='sent' ? 'sent' : 'received'">
+          :class="message.status">
           <div class="content">
             {{message.message}}
           </div>
