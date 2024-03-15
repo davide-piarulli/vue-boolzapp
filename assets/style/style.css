@@ -285,9 +285,9 @@ img {
   background-color: grey;
 }
 
-.chat-box .message .box:hover .message-info {
+/* .chat-box .message .box:hover .message-info {
   display: block;
-}
+} */
 
 .chat-box .message.sent {
   background-color: var(--bg-lightgreen);

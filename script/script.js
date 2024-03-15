@@ -1,5 +1,7 @@
 import { contacts } from './db.js';
 
+const { DateTime } = luxon;
+
 const { createApp } = Vue;
 
 createApp({
@@ -14,14 +16,22 @@ createApp({
         status: ''
       },
       nametoSearch: '',
-      isClicked: false
+      isClicked: false,
+      dataOra:'',
     }
   },
   methods: {
 
+    printData(){
+  
+    this.dataOra = DateTime.now()
+        .setLocale('it')
+        .toFormat('dd/MM/yyyy hh:mm:ss')
+      },
+
     newMessage() {
       this.newText = {
-        date: '01/01/1900',
+        date: this.printData(),
         message: this.newMsg,
         status: 'sent'
       }
@@ -37,7 +47,7 @@ createApp({
       setTimeout(() => {
 
         this.newAnswer = {
-          date: '01/01/1900',
+          date: DateTime.local().toFormat('dd/MM/yyyy hh:mm:ss'),
           message: 'Messaggio dal BOT',
           status: 'received',
         }
@@ -67,5 +77,6 @@ createApp({
         
       return contacts;
     }
-  }
+  },
+
 }).mount('#app');
