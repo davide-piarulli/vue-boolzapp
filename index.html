@@ -125,24 +125,20 @@
 
         <!-- messaggio che si cicla -->
         <div class="message" 
-          v-for="message in contacts[activeId].messages"
+          v-for="(message, index) in contacts[activeId].messages"
           :class="message.status">
 
           <div class="content">
             {{message.message}}
           </div>
           <div class="box"
-          
-          :class="{'hidden' : !isClicked}"
           >
-            <i class="fa-solid fa-chevron-down"  
-            @click="isClicked = !isClicked"
-            ></i>
-            <div class="message-info"
-            
-            >
+          <i class="fa-solid fa-chevron-down" 
+          @click="isClicked(index)"></i>
+            <div class="message-info d_none">
               <span>Info Messaggio</span><br>
-              <span @click="deleteMessage(indice)">Cancella Messaggio</span>
+              <span @click.stop="deleteMessage(index);
+              isClicked(index)">Cancella Messaggio</span>
             </div>
           </div>
           <span class="time-message">{{message.date}}</span>

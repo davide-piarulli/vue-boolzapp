@@ -16,7 +16,6 @@ createApp({
         status: ''
       },
       nametoSearch: '',
-      isClicked: false,
       dataOra:'',
     }
   },
@@ -24,17 +23,14 @@ createApp({
 
     printData(){
       
-      
     this.dataOra = DateTime.now()
         .setLocale('it')
         .toFormat('dd/MM/yyyy HH:mm:ss')
       return this.dataOra;
     },
 
-    
     newMessage() {
       this.printData();
-      console.log(this.dataOra);
       this.newText = {
         date: this.dataOra,
         message: this.newMsg,
@@ -50,9 +46,9 @@ createApp({
     },
     answer() {
       setTimeout(() => {
-
+        this.printData();
         this.newAnswer = {
-          date: DateTime.local().toFormat('dd/MM/yyyy hh:mm:ss'),
+          date: this.dataOra,
           message: 'Messaggio dal BOT',
           status: 'received',
         }
@@ -64,7 +60,12 @@ createApp({
 
     deleteMessage(indice){
       this.contacts[this.activeId].messages.splice(indice,1)
-      }
+      },
+    
+    isClicked(index){
+      const info = document.querySelectorAll('.message-info');
+      info[index].classList.toggle('d_none');
+    }
     
   },
 
