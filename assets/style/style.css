@@ -281,6 +281,9 @@ img {
   display: none;
   z-index: 999;
 }
+.chat-box .message .message-info span:hover {
+  background-color: grey;
+}
 
 .chat-box .message .box:hover .message-info {
   display: block;

@@ -13,10 +13,12 @@ createApp({
         message: '',
         status: ''
       },
-      nametoSearch: ''
+      nametoSearch: '',
+      isClicked: false
     }
   },
   methods: {
+
     newMessage() {
       this.newText = {
         date: '01/01/1900',
@@ -43,13 +45,15 @@ createApp({
 
       }, 1000)
 
-    }
+    },
+
+    deleteMessage(indice){
+      this.contacts[this.activeId].messages.splice(indice,1)
+      }
+    
   },
 
   computed: {
-    visibleContacts(){
-      return contacts.filter(contact => contact.visible)
-    },
 
     searchContacts (){
       contacts.forEach(contact => {
