@@ -1,37 +1,30 @@
 VUE Boolzapp
 ===
-Milestone 1
-Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
-Milestone 2
-Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-Click sul contatto mostra la conversazione del contatto cliccato
+https://github.com/user-attachments/assets/26a35dfc-43e3-4cb0-bbf4-4d06040cd837
 
+Boolzapp è una replica di WhatsApp sviluppata utilizzando Vue.js. L'app permette di selezionare una chat, scrivere un messaggio e ricevere una risposta automatica da un bot.
 
-Milestone 3
-Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+## Descrizione
 
-Milestone 4
-Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+Questo progetto è una replica semplice di WhatsApp che include funzionalità di base come la selezione di chat, l'invio di messaggi e risposte automatiche da un bot. È un ottimo esempio per comprendere come costruire applicazioni di messaggistica utilizzando Vue.js.
 
-Milestone 5 - opzionale
-Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+## Struttura del Progetto
 
-Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
+- **index.html**: Il punto di ingresso del progetto, contiene la struttura HTML principale.
+- **assets/**: Contiene le immagini e icone utilizzate nell'applicazione.
+- **styles.css**: Contiene gli stili CSS per il design dell'applicazione.
 
-Consigli utili:
-Si possono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella lista dei contatti
-I pulsanti e le icone possono non funzionare (a parte l’invio del messaggio)
-Per gestire le date, può essere utile la libreria Luxon
-La struttura dell’array dei contatti potrebbe avere questa forma:
+## Funzionalità
+
+- **Selezione Chat**: Gli utenti possono selezionare una chat dalla lista.
+- **Invio Messaggi**: Gli utenti possono inviare messaggi nella chat selezionata.
+- **Risposte Automatiche**: Ogni messaggio inviato riceve una risposta automatica da un bot.
+- **Design Responsivo**: L'interfaccia si adatta a diverse risoluzioni di schermo.
 
 
-## Svolgimento
-Milestone 1
-1. carico i contatti con un ciclo for
-2. stampo nome ed immagine profilo
+
+
 
 Milestone 2
 1. ciclo con v for i messaggi di ogni contatto
